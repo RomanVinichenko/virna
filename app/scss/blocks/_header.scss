@@ -1,0 +1,142 @@
+header {
+  position: relative;
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    max-width: 855px;
+    background-color: rgba($wh, 0.85);
+    backdrop-filter: blur(15px);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    max-width: 465px;
+    background-color: $wh;
+  }
+
+  .header-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    margin-bottom: 217px;
+  }
+
+  .header-middle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: auto;
+
+    .title {
+      position: relative;
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 470px;
+      font-size: 72px;
+      letter-spacing: 0.02em;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 143px;
+        top: -100px;
+        display: none;
+        width: 328px;
+        height: 328px;
+        border-radius: 50%;
+        background-color: #d7969e;
+        filter: blur(70px);
+      }
+
+      @extend %cerapro-700;
+    }
+
+    .subtitle {
+      height: 130px;
+      letter-spacing: 0.04em;
+      text-align: right;
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+
+      @extend %cerapro-500;
+    }
+
+    .info-box {
+      padding-top: 165px;
+
+      &__type {
+        margin-bottom: 30px;
+        font-size: 16px;
+        line-height: 1.25;
+        writing-mode: vertical-lr;
+      }
+
+      &__year {
+        font-size: 16px;
+        line-height: 1.25;
+        writing-mode: vertical-lr;
+
+        @extend %cerapro-500;
+      }
+    }
+  }
+
+  .header-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 504px;
+    height: 20px;
+
+    &__menu {
+      margin-right: 115px;
+      cursor: pointer;
+    }
+
+    &__links {
+      display: flex;
+      margin-right: auto;
+    }
+
+    &__lang {
+      padding-right: 15px;
+      position: relative;
+      cursor: pointer;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 6px;
+        top: 5px;
+        right: 0;
+        background-image: url('../images/arrow.svg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+      }
+    }
+  }
+}
