@@ -1,0 +1,79 @@
+.footer {
+  padding: 100px 0;
+  height: 800px;
+
+  .footer-box {
+    display: flex;
+  }
+
+  .footer-left {
+    width: 50%;
+
+    .footer-logo {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: -400px;
+        top: 50px;
+        width: 77px;
+        height: 528px;
+        background-image: url("../images/virna.svg");
+
+        @include r(1100) {
+          right: -300px;
+        }
+
+        @include r(890) {
+          right: -150px;
+        }
+
+        @include r(500) {
+          right: -80px;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 100px;
+        top: 150px;
+        width: 350px;
+        height: 350px;
+        background-color: #d7969e;
+        filter: blur(200px);
+
+        @include r(500) {
+          left: 0;
+          width: 330px;
+          height: 330px;
+        }
+      }
+    }
+  }
+
+  .footer-right {
+    width: 50%;
+
+    &__title {
+      margin-bottom: 30px;
+      padding-top: 220px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 72px;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+
+      @include r(1100) {
+        font-size: 48px;
+      }
+
+      @include r(900) {
+        font-size: 42px;
+      }
+
+      @extend %cerapro-700;
+    }
+  }
+}
