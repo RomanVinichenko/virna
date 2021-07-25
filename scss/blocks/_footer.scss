@@ -76,4 +76,9 @@
       @extend %cerapro-700;
     }
   }
+
+  @include r(1000) {
+    padding: 40px 0;
+    height: 650px;
+  }
 }
