@@ -5,6 +5,30 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
 
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    max-width: 465px;
+    background-color: $wh;
+
+    @include r(1921) {
+      max-width: 380px;
+    }
+
+    @include r(1800) {
+      max-width: 220px;
+    }
+
+    @include r(1438) {
+      max-width: 100px;
+    }
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -16,17 +40,30 @@ header {
     max-width: 855px;
     background-color: rgba($wh, 0.85);
     backdrop-filter: blur(15px);
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-    max-width: 465px;
-    background-color: $wh;
+
+    @include r(1921) {
+      max-width: 800px;
+    }
+
+    @include r(1800) {
+      max-width: 650px;
+    }
+
+    @include r(1438) {
+      max-width: 440px;
+    }
+
+    @include r(958) {
+      max-width: 350px;
+    }
+
+    @include r(760) {
+      max-width: 250px;
+    }
+
+    @include r(550) {
+      max-width: 165px;
+    }
   }
 
   .header-box {
@@ -36,11 +73,21 @@ header {
     height: 100vh;
   }
 
+  .logo {
+    @include r(550) {
+      display: none;
+    }
+  }
+
   .header-top {
     display: flex;
     justify-content: space-between;
-    padding-top: 50px;
     margin-bottom: 217px;
+    padding-top: 50px;
+
+    @include r(550) {
+      justify-content: flex-end;
+    }
   }
 
   .header-middle {
@@ -67,6 +114,15 @@ header {
         border-radius: 50%;
         background-color: #d7969e;
         filter: blur(70px);
+      }
+
+      @include r(1438) {
+        max-width: 290px;
+        font-size: 48px;
+      }
+
+      @include r(550) {
+        display: none;
       }
 
       @extend %cerapro-700;
@@ -107,12 +163,16 @@ header {
     justify-content: space-between;
     margin-bottom: 50px;
     width: 100%;
-    max-width: 504px;
     height: 20px;
+    max-width: 504px;
 
     &__menu {
       margin-right: 115px;
       cursor: pointer;
+
+      @include r(760) {
+        margin-right: 30px;
+      }
     }
 
     &__links {
@@ -121,22 +181,38 @@ header {
     }
 
     &__lang {
-      padding-right: 15px;
       position: relative;
+      padding-right: 15px;
       cursor: pointer;
-      &::after{
+
+      &::after {
         content: "";
         position: absolute;
+        right: 0;
+        top: 5px;
         width: 9px;
         height: 6px;
-        top: 5px;
-        right: 0;
-        background-image: url('../images/arrow.svg');
+        background-image: url("../images/arrow.svg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-
       }
+    }
+
+    @include r(1921) {
+      max-width: 400px;
+    }
+
+    @include r(1438) {
+      max-width: 340px;
+    }
+
+    @include r(958) {
+      max-width: 300px;
+    }
+
+    @include r(760) {
+      max-width: 150px;
     }
   }
 }

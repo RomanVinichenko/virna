@@ -3,100 +3,231 @@
 
   .colors-box {
     display: flex;
+    justify-content: space-between;
+
+    @include r(760) {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   .colors-left {
-    width: 50%;
+    width: 100%;
+    max-width: 705px;
 
     &__style {
-      @extend %cerapro-500;
+      padding: 80px 0;
       font-size: 16px;
       line-height: 1.25;
       letter-spacing: 0.03em;
       text-transform: uppercase;
       writing-mode: vertical-lr;
       transform: rotate(-180deg);
-      padding: 80px 0;
+
+      @extend %cerapro-500;
     }
 
     &__title {
-      max-width: 450px;
+      padding-left: 50px;
       width: 100%;
-      @extend %cerapro-700;
+      max-width: 450px;
       font-size: 56px;
       line-height: 1.25;
-      padding-left: 50px;
+
+      @include r(1420) {
+        max-width: 270px;
+        font-size: 36px;
+      }
+
+      @include r(950) {
+        max-width: 270px;
+        font-size: 32px;
+      }
+
+      @extend %cerapro-700;
     }
 
     &__subtitle {
-      line-height: 1.125;
-      max-width: 450px;
-      width: 100%;
-      padding-left: 50px;
-      text-align: right;
       margin-bottom: 190px;
+      padding-left: 50px;
+      width: 100%;
+      max-width: 450px;
+      line-height: 1.125;
+      text-align: right;
     }
 
     &__text {
-      @extend %cerapro-500;
       line-height: 1.3;
+
+      @extend %cerapro-500;
     }
 
     &__item-first {
       margin-left: 120px;
+
+      @include r(1420) {
+        margin-left: 25px;
+      }
+
+      @include r(550) {
+        margin-left: 25px;
+      }
+    }
+
+    &__item-second {
+      display: flex;
+      margin-left: 280px;
+
+      @include r(1420) {
+        margin-left: 160px;
+      }
+
+      @include r(550) {
+        margin-left: 120px;
+      }
     }
 
     &--grey {
       background-color: #898989;
     }
 
-    &__item-second {
-      margin-left: 280px;
-      display: flex;
-    }
-
     &--lightgrey {
-      background-color: #B7B7B7;
       margin-right: 30px;
+      background-color: #b7b7b7;
+
+      @include r(1420) {
+        margin-right: 15px;
+      }
     }
 
     &--black {
       background-color: $bl;
-
     }
   }
 
   .colors-right {
-    width: 50%;
+    width: 100%;
+    max-width: 705px;
 
     &__title {
-      @extend %cerapro-500;
+      margin-bottom: 50px;
       font-size: 30px;
       line-height: 1.25;
       letter-spacing: 0.03em;
-      margin-bottom: 50px;
+
+      @extend %cerapro-500;
+    }
+
+    &__descr {
+      margin-left: 135px;
+      width: 100%;
+      max-width: 290px;
+      line-height: 1.3;
+      color: #292929;
+
+      @include r(1420) {
+        margin-left: 60px;
+      }
+
+      @include r(550) {
+        margin-left: 30px;
+      }
+    }
+
+    &__color {
+      margin-left: auto;
+      padding: 30px 0 100px;
+      line-height: 1.3;
+      letter-spacing: 0.03em;
+      writing-mode: vertical-lr;
+      transform: rotate(-180deg);
+
+      @extend %cerapro-500;
+    }
+
+    &__item-first {
+      margin-left: 135px;
+
+      @include r(1420) {
+        margin-left: 55px;
+      }
+
+      @include r(550) {
+        margin-left: 25px;
+      }
     }
 
     &__text {
-      margin-left: 135px;
       line-height: 1.3;
-      color: #292929;
-      width: 315px;
-    }
-    &__color {
-      writing-mode: vertical-lr;
-      padding: 100px 0 35px;
-      margin-left: auto;
-      transform: rotate(-180deg);
+
       @extend %cerapro-500;
-      line-height: 1.3;
+    }
+
+    &__item-second {
+      display: flex;
+      margin-left: 295px;
+
+      @include r(1420) {
+        margin-left: 170px;
+      }
+
+      @include r(550) {
+        margin-left: 120px;
+      }
+    }
+
+    &__style {
+      margin-left: auto;
+      padding-top: 50px;
+      font-size: 16px;
+      line-height: 1.25;
       letter-spacing: 0.03em;
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+      transform: rotate(-180deg);
+
+      @extend %cerapro-500;
+    }
+
+    &--darkpink {
+      margin-bottom: 45px;
+      margin-left: auto;
+      width: 280px;
+      height: 70px;
+      background-color: #9a0034;
+
+      @include r(1420) {
+        width: 210px;
+      }
+    }
+
+    &--pinkred {
+      margin-bottom: 15px;
+      background-color: #d7969e;
+    }
+
+    &--lightpink {
+      margin-right: 30px;
+      margin-bottom: 15px;
+      background-color: #e8d8d9;
+
+      @include r(1420) {
+        margin-right: 15px;
+      }
+    }
+
+    &--grey {
+      background-color: #dedcdc;
     }
   }
 }
 
 .color {
+  margin-bottom: 10px;
   width: 130px;
   height: 60px;
-  margin-bottom: 10px;
+
+  @include r(1420) {
+    max-width: 90px;
+  }
 }
